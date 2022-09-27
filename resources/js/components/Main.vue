@@ -35,7 +35,11 @@
                 axios.get('/api/posts' , {
                     page: postsPage
                 }).then((response) => {
-                    console.log(response);
+                    // console.log(response.data.results);
+                    this.posts = response.data.results.data;
+                    this.currentPage = response.data.results.current_page;
+                    this.lastPage = response.data.results.last_page;
+                    this.loading = false;
 
                 }).catch((error) => {
                     console.error(error);

@@ -1927,11 +1927,17 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getPosts: function getPosts() {
+      var _this = this;
+
       var postsPage = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/posts', {
         page: postsPage
       }).then(function (response) {
-        console.log(response);
+        // console.log(response.data.results);
+        _this.posts = response.data.results.data;
+        _this.currentPage = response.data.results.current_page;
+        _this.lastPage = response.data.results.last_page;
+        _this.loading = false;
       })["catch"](function (error) {
         console.error(error);
       });
