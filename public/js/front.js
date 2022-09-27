@@ -1959,7 +1959,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['post']
+});
 
 /***/ }),
 
@@ -2005,7 +2007,14 @@ var render = function render() {
     staticClass: "col-12"
   }, [_c("h1", {
     staticClass: "p-3 m-3"
-  }, [_vm._v("\n              Recent posts:\n          ")]), _vm._v(" "), _c("PostCard")], 1)])]);
+  }, [_vm._v("\n              Recent posts:\n          ")]), _vm._v(" "), _vm._l(_vm.posts, function (post) {
+    return _c("PostCard", {
+      key: post.id,
+      attrs: {
+        post: post
+      }
+    });
+  })], 2)])]);
 };
 
 var staticRenderFns = [];
@@ -2031,7 +2040,7 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "card"
-  }, [_vm._v("\n  Prova\n")]);
+  });
 };
 
 var staticRenderFns = [];

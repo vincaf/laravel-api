@@ -1,12 +1,12 @@
 <template>
   <div class="card">
-    Prova
+    
   </div>
 </template>
 
 <script>
 export default {
-
+    props: ['post'],
 }
 </script>
 
