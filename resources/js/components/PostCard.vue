@@ -1,6 +1,10 @@
 <template>
   <div class="card">
-    
+    <ul>
+        <li>
+            {{ post.title }}
+        </li>
+    </ul>
   </div>
 </template>
 

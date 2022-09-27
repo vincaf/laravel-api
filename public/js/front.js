@@ -2040,7 +2040,7 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "card"
-  });
+  }, [_c("ul", [_c("li", [_vm._v("\n          " + _vm._s(_vm.post.title) + "\n      ")])])]);
 };
 
 var staticRenderFns = [];
