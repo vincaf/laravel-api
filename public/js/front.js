@@ -1960,7 +1960,18 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["post"]
+  props: ["post"],
+  methods: {
+    isValidURL: function isValidURL(string) {
+      var regex = /(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+
+      if (!regex.test(string)) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -2048,12 +2059,31 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "card-header"
   }, [_vm._v(" " + _vm._s(_vm.post.user.name) + " ")]), _vm._v(" "), _c("div", {
+    staticClass: "card-image p-2"
+  }, [_vm.isValidURL(_vm.post.post_image) ? _c("img", {
+    staticClass: "card-img-top",
+    attrs: {
+      src: _vm.post.post_image,
+      alt: _vm.post.title
+    }
+  }) : _c("img", {
+    staticClass: "card-img-top w-100",
+    attrs: {
+      src: "storage/" + _vm.post.post_image,
+      alt: _vm.post.title
+    }
+  })]), _vm._v(" "), _c("div", {
     staticClass: "card-body"
   }, [_c("h5", {
     staticClass: "card-title"
   }, [_vm._v(" " + _vm._s(_vm.post.title) + " ")]), _vm._v(" "), _c("p", {
     staticClass: "card-text"
-  }, [_vm._v("\n      " + _vm._s(_vm.post.post_content) + "\n    ")])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n      " + _vm._s(_vm.post.post_content.substring(0, 100)) + "...\n    ")]), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-primary",
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("See More")])]), _vm._v(" "), _c("div", {
     staticClass: "card-footer text-muted"
   }, [_vm._v(" " + _vm._s(_vm.post.post_date) + " ")])]);
 };
