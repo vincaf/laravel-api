@@ -6,7 +6,9 @@
                 Recent posts:
             </h1>
 
-            <PostCard v-for="post in posts" :key="post.id" :post="post" />
+            <div class="d-flex flex-wrap justify-content-between">
+                <PostCard v-for="post in posts" :key="post.id" :post="post" />
+            </div>
         </div>
     </div>
   </main>

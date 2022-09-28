@@ -1960,7 +1960,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['post']
+  props: ["post"]
 });
 
 /***/ }),
@@ -2007,14 +2007,16 @@ var render = function render() {
     staticClass: "col-12"
   }, [_c("h1", {
     staticClass: "p-3 m-3"
-  }, [_vm._v("\n              Recent posts:\n          ")]), _vm._v(" "), _vm._l(_vm.posts, function (post) {
+  }, [_vm._v("\n              Recent posts:\n          ")]), _vm._v(" "), _c("div", {
+    staticClass: "d-flex flex-wrap justify-content-between"
+  }, _vm._l(_vm.posts, function (post) {
     return _c("PostCard", {
       key: post.id,
       attrs: {
         post: post
       }
     });
-  })], 2)])]);
+  }), 1)])])]);
 };
 
 var staticRenderFns = [];
@@ -2039,8 +2041,21 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "card"
-  }, [_c("ul", [_c("li", [_vm._v("\n          " + _vm._s(_vm.post.title) + "\n      ")])])]);
+    staticClass: "card text-center m-3",
+    staticStyle: {
+      width: "20rem"
+    }
+  }, [_c("div", {
+    staticClass: "card-header"
+  }, [_vm._v(" " + _vm._s(_vm.post.user.name) + " ")]), _vm._v(" "), _c("div", {
+    staticClass: "card-body"
+  }, [_c("h5", {
+    staticClass: "card-title"
+  }, [_vm._v(" " + _vm._s(_vm.post.title) + " ")]), _vm._v(" "), _c("p", {
+    staticClass: "card-text"
+  }, [_vm._v("\n      " + _vm._s(_vm.post.post_content) + "\n    ")])]), _vm._v(" "), _c("div", {
+    staticClass: "card-footer text-muted"
+  }, [_vm._v(" " + _vm._s(_vm.post.post_date) + " ")])]);
 };
 
 var staticRenderFns = [];
