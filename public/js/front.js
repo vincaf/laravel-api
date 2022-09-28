@@ -2072,12 +2072,7 @@ var render = function render() {
     staticClass: "card-title"
   }, [_vm._v(" " + _vm._s(_vm.post.title) + " ")]), _vm._v(" "), _c("p", {
     staticClass: "card-text"
-  }, [_vm._v("\n      " + _vm._s(_vm.post.post_content.substring(0, 100)) + "...\n    ")]), _vm._v(" "), _c("a", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("See More")])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n      " + _vm._s(_vm.post.post_content.substring(0, 100)) + "\n    ")])]), _vm._v(" "), _c("div", {
     staticClass: "card-footer text-muted"
   }, [_vm._v(" " + _vm._s(_vm.post.post_date) + " ")])]);
 };

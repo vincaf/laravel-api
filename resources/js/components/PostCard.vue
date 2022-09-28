@@ -7,9 +7,8 @@
     <div class="card-body">
       <h5 class="card-title"> {{ post.title }} </h5>
       <p class="card-text">
-        {{ post.post_content.substring(0, 100) }}...
+        {{ post.post_content.substring(0, 100) }}
       </p>
-      <a href="#" class="btn btn-primary">See More</a>
     </div>
     <div class="card-footer text-muted"> {{ post.post_date }} </div>
   </div>
