@@ -52,7 +52,12 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::with('posts', 'userDetail', 'roles')->findOrFail($id);
+
+        return response()->json([
+            'response' => true,
+            "results" => $user
+        ]);
     }
 
     /**
