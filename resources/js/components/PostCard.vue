@@ -2,7 +2,7 @@
   <div class="card text-center m-3" style="width: 20rem;">
     <div class="card-header"> {{ post.user.name }} </div>
     <div class="card-image p-2">
-        <img :src="isValidURL(post.post_image) ? post.post_image : 'storage/' + post.post_image" class="card-img-top" :alt="post.title">
+        <img :src="isValidURL(post.post_image) ? post.post_image : 'storage/' + post.post_image" class="image-card" :alt="post.title">
     </div>
     <div class="card-body">
       <h5 class="card-title"> {{ post.title }} </h5>
@@ -31,5 +31,10 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.image-card{
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+}
 </style>
