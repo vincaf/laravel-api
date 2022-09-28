@@ -2060,16 +2060,10 @@ var render = function render() {
     staticClass: "card-header"
   }, [_vm._v(" " + _vm._s(_vm.post.user.name) + " ")]), _vm._v(" "), _c("div", {
     staticClass: "card-image p-2"
-  }, [_vm.isValidURL(_vm.post.post_image) ? _c("img", {
+  }, [_c("img", {
     staticClass: "card-img-top",
     attrs: {
-      src: _vm.post.post_image,
-      alt: _vm.post.title
-    }
-  }) : _c("img", {
-    staticClass: "card-img-top w-100",
-    attrs: {
-      src: "storage/" + _vm.post.post_image,
+      src: _vm.isValidURL(_vm.post.post_image) ? _vm.post.post_image : "storage/" + _vm.post.post_image,
       alt: _vm.post.title
     }
   })]), _vm._v(" "), _c("div", {

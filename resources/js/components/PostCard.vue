@@ -2,8 +2,7 @@
   <div class="card text-center m-3" style="width: 20rem;">
     <div class="card-header"> {{ post.user.name }} </div>
     <div class="card-image p-2">
-        <img v-if="isValidURL(post.post_image)" :src="post.post_image" class="card-img-top" :alt="post.title">
-        <img v-else :src="'storage/' + post.post_image" class="card-img-top w-100" :alt="post.title">
+        <img :src="isValidURL(post.post_image) ? post.post_image : 'storage/' + post.post_image" class="card-img-top" :alt="post.title">
     </div>
     <div class="card-body">
       <h5 class="card-title"> {{ post.title }} </h5>
